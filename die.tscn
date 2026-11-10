@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://3fosug4fn0jo"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h2yge"]
+friction = 0.45
+
+[sub_resource type="BoxMesh" id="BoxMesh_vf1vs"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Die" type="RigidBody3D" unique_id=638951541]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_h2yge")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1897690142]
+mesh = SubResource("BoxMesh_vf1vs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1147825090]
+shape = SubResource("BoxShape3D_7dm0k")
+
+[node name="Label3D1" type="Label3D" parent="." unique_id=1782328340]
+transform = Transform3D(0.9999997, 0, 0, 0, -4.3711374e-08, 0.9999998, 0, -0.9999999, -4.371139e-08, 0, 0.052214533, 0)
+pixel_size = 0.002
+text = "1"
+
+[node name="Label3D2" type="Label3D" parent="." unique_id=904621396]
+transform = Transform3D(-4.3711367e-08, -4.3711363e-08, 0.99999964, -0.9999995, -1.6420281e-15, -4.3711374e-08, 0, -0.9999999, -4.3711385e-08, 0.05210726, 0.000107263724, 0)
+pixel_size = 0.002
+text = "2"
+
+[node name="Label3D3" type="Label3D" parent="." unique_id=1553547753]
+transform = Transform3D(-1.1924873e-08, 0.9999997, 8.742273e-08, 0.9999994, 1.1924876e-08, 0, -1.0425057e-15, 8.742276e-08, -0.9999997, 2.2776805e-09, 0.00010726827, -0.05210726)
+pixel_size = 0.002
+text = "3"
+
+[node name="Label3D4" type="Label3D" parent="." unique_id=177647769]
+transform = Transform3D(5.463396e-15, 0.9999997, 7.105427e-15, -0.9999994, -1.6420284e-15, -4.3711367e-08, -4.3711367e-08, 2.1316282e-14, 0.9999997, -2.2776805e-09, 0.00010726372, 0.05210726)
+pixel_size = 0.002
+text = "4"
+
+[node name="Label3D5" type="Label3D" parent="." unique_id=843205732]
+transform = Transform3D(-5.212528e-16, 4.371138e-08, -0.99999964, 0.9999995, 1.1924878e-08, 0, 1.1924875e-08, -0.9999999, -4.3711374e-08, -0.05210726, 0.00010726828, 0)
+pixel_size = 0.002
+text = "5"
+
+[node name="Label3D6" type="Label3D" parent="." unique_id=2046057172]
+transform = Transform3D(0.9999997, 0, 0, 0, -4.3711385e-08, -0.9999998, 0, 0.9999999, -4.371138e-08, 0, -0.052, 0)
+pixel_size = 0.002
+text = "6"

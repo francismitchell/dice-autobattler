@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://b01frnh1cwted"]
+
+[ext_resource type="PackedScene" uid="uid://3fosug4fn0jo" path="res://die.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://y4h4056xx7xm" path="res://die.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://dqtk8gtr8ad1f" path="res://roll_dice_button.gd" id="3_h2yge"]
+
+[sub_resource type="Environment" id="Environment_vf1vs"]
+background_mode = 1
+background_color = Color(0.76899225, 0.38273674, 0.49740392, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7dm0k"]
+data = PackedVector3Array(-0.5, -0.005, 0.5, -0.5, -0.005, -0.5, -0.5, 0.005, -0.5, 0.5, -0.005, -0.5, -0.5, -0.005, -0.5, -0.5, -0.005, 0.5, -0.5, 0.005, -0.5, -0.5, -0.005, -0.5, 0.5, -0.005, -0.5, -0.5, 0.005, -0.5, -0.5, 0.005, 0.5, -0.5, -0.005, 0.5, -0.5, -0.005, 0.5, -0.5, 0.005, 0.5, 0.5, 0.005, 0.5, 0.5, 0.005, 0.5, -0.5, 0.005, 0.5, -0.5, 0.005, -0.5, -0.5, -0.005, 0.5, 0.5, -0.005, 0.5, 0.5, -0.005, -0.5, 0.5, 0.005, 0.5, 0.5, -0.005, 0.5, -0.5, -0.005, 0.5, 0.5, -0.005, -0.5, 0.5, -0.005, 0.5, 0.5, 0.005, 0.5, 0.5, -0.005, -0.5, 0.5, 0.005, -0.5, -0.5, 0.005, -0.5, -0.5, 0.005, -0.5, 0.5, 0.005, -0.5, 0.5, 0.005, 0.5, 0.5, 0.005, 0.5, 0.5, 0.005, -0.5, 0.5, -0.005, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ig7tw"]
+data = PackedVector3Array(-0.5, -0.0005, 0.5, -0.5, -0.0005, -0.5, -0.5, 0.0005, -0.5, 0.5, -0.0005, -0.5, -0.5, -0.0005, -0.5, -0.5, -0.0005, 0.5, -0.5, 0.0005, -0.5, -0.5, -0.0005, -0.5, 0.5, -0.0005, -0.5, -0.5, 0.0005, -0.5, -0.5, 0.0005, 0.5, -0.5, -0.0005, 0.5, -0.5, -0.0005, 0.5, -0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, -0.5, 0.0005, 0.5, -0.5, 0.0005, -0.5, -0.5, -0.0005, 0.5, 0.5, -0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, 0.0005, 0.5, 0.5, -0.0005, 0.5, -0.5, -0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, -0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, 0.0005, -0.5, -0.5, 0.0005, -0.5, -0.5, 0.0005, -0.5, 0.5, 0.0005, -0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, -0.5, 0.5, -0.0005, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0xm2m"]
+data = PackedVector3Array(-0.5, -0.0005, 0.5, -0.5, -0.0005, -0.5, -0.5, 0.0005, -0.5, 0.5, -0.0005, -0.5, -0.5, -0.0005, -0.5, -0.5, -0.0005, 0.5, -0.5, 0.0005, -0.5, -0.5, -0.0005, -0.5, 0.5, -0.0005, -0.5, -0.5, 0.0005, -0.5, -0.5, 0.0005, 0.5, -0.5, -0.0005, 0.5, -0.5, -0.0005, 0.5, -0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, -0.5, 0.0005, 0.5, -0.5, 0.0005, -0.5, -0.5, -0.0005, 0.5, 0.5, -0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, 0.0005, 0.5, 0.5, -0.0005, 0.5, -0.5, -0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, -0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, 0.0005, -0.5, -0.5, 0.0005, -0.5, -0.5, 0.0005, -0.5, 0.5, 0.0005, -0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, -0.5, 0.5, -0.0005, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h2yge"]
+data = PackedVector3Array(-0.5, -0.0005, 0.5, -0.5, -0.0005, -0.5, -0.5, 0.0005, -0.5, 0.5, -0.0005, -0.5, -0.5, -0.0005, -0.5, -0.5, -0.0005, 0.5, -0.5, 0.0005, -0.5, -0.5, -0.0005, -0.5, 0.5, -0.0005, -0.5, -0.5, 0.0005, -0.5, -0.5, 0.0005, 0.5, -0.5, -0.0005, 0.5, -0.5, -0.0005, 0.5, -0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, -0.5, 0.0005, 0.5, -0.5, 0.0005, -0.5, -0.5, -0.0005, 0.5, 0.5, -0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, 0.0005, 0.5, 0.5, -0.0005, 0.5, -0.5, -0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, -0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, 0.0005, -0.5, -0.5, 0.0005, -0.5, -0.5, 0.0005, -0.5, 0.5, 0.0005, -0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, -0.5, 0.5, -0.0005, -0.5)
+
+[node name="Main" type="Node3D" unique_id=2044778682]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1264556586]
+environment = SubResource("Environment_vf1vs")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=871268808]
+transform = Transform3D(-2.7045552e-08, -0.78560364, 0.61873007, -3.4339827e-08, 0.61873007, 0.78560364, -1, 0, -4.371139e-08, 0.4170379, 0.66342664, 2.9424175e-08)
+
+[node name="Terrain" type="StaticBody3D" parent="." unique_id=776933931]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Terrain" unique_id=1162170588]
+size = Vector3(1, 0.01, 1)
+
+[node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Terrain" unique_id=947370301]
+shape = SubResource("ConcavePolygonShape3D_7dm0k")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Terrain" unique_id=222917251]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.5, 0.5, 0)
+size = Vector3(1, 0.001, 1)
+
+[node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="Terrain" unique_id=1841643055]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.5, 0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_ig7tw")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Terrain" unique_id=27698992]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 0, 0.5, -0.5)
+size = Vector3(1, 0.001, 1)
+
+[node name="CSGBakedCollisionShape3D3" type="CollisionShape3D" parent="Terrain" unique_id=684012707]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 0, 0.5, -0.5)
+shape = SubResource("ConcavePolygonShape3D_0xm2m")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Terrain" unique_id=1781389645]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 0, 0.5, 0.5)
+size = Vector3(1, 0.001, 1)
+
+[node name="CSGBakedCollisionShape3D4" type="CollisionShape3D" parent="Terrain" unique_id=1639737928]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 0, 0.5, 0.5)
+shape = SubResource("ConcavePolygonShape3D_h2yge")
+
+[node name="Die" parent="." unique_id=638951541 groups=["Dice"] instance=ExtResource("1_ig7tw")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0.27478075, 0)
+script = ExtResource("2_0xm2m")
+
+[node name="Die2" parent="." unique_id=1429026469 groups=["Dice"] instance=ExtResource("1_ig7tw")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.121049225, 0.2747808, 0.24071789)
+script = ExtResource("2_0xm2m")
+
+[node name="Die3" parent="." unique_id=1904750941 groups=["Dice"] instance=ExtResource("1_ig7tw")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.13074815, 0.2747808, 0.24682471)
+script = ExtResource("2_0xm2m")
+
+[node name="Die4" parent="." unique_id=609254660 groups=["Dice"] instance=ExtResource("1_ig7tw")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.1018672, 0.2747808, -0.25915352)
+script = ExtResource("2_0xm2m")
+
+[node name="Die5" parent="." unique_id=2017138957 groups=["Dice"] instance=ExtResource("1_ig7tw")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.12496212, 0.27478087, -0.18868575)
+script = ExtResource("2_0xm2m")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2114057175]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.79271245, 0)
+
+[node name="RollDiceButton" type="Button" parent="." unique_id=1809123297]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Roll dice"
+script = ExtResource("3_h2yge")
+
+[connection signal="pressed" from="RollDiceButton" to="RollDiceButton" method="_on_pressed"]
