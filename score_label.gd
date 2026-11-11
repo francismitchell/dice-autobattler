@@ -13,14 +13,16 @@ func _ready() -> void:
 		die.die_landed.connect(_on_die_landed)
 
 
+# die score travels across screen from die to label and is then scored
 func _on_die_landed(die_global_position: Vector3, landed_on_value: int) -> void:
+	# offset each die's travel time so the score doesn't jump up in one go
 	var travel_time: float = 1.0 + randf()
 	get_tree().create_timer(travel_time).timeout.connect(func(): score += landed_on_value)
+	# get die screen position and tween position from there
 	var screen_pos: Vector2 = cam.unproject_position(die_global_position)
 	var label: Label = Label.new()
 	label.text = str(landed_on_value)
 	label.position = screen_pos
-	print(screen_pos)
 	get_tree().root.add_child(label)
 	create_tween().tween_property(label, "position", position, travel_time).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT).finished.connect(label.queue_free)
 
