@@ -1,6 +1,8 @@
 class_name Die
 extends RigidBody3D
 
+signal die_landed
+
 @onready var initial_position: Vector3 = global_position
 var toggle: bool = true
 
@@ -14,21 +16,23 @@ func _process(delta: float) -> void:
 	# check die value only on the first frame where motion equals zero
 	if toggle:
 		if linear_velocity == Vector3.ZERO and angular_velocity == Vector3.ZERO:
+			var landed_on_value: int = 0
 			var x: int = round(global_rotation_degrees.x / 90)
 			var z: int = round(global_rotation_degrees.z / 90)
 			# determined empirically
 			if x == 1:
-				print('3')
+				landed_on_value = 3
 			elif x == -1:
-				print('4')
+				landed_on_value = 4
 			elif z == 0:
-				print('1')
+				landed_on_value = 1
 			elif z == 1:
-				print('2')
+				landed_on_value = 2
 			elif z == -1:
-				print('5')
+				landed_on_value = 5
 			else:
-				print('6')
+				landed_on_value = 6
+			die_landed.emit(landed_on_value)
 			#print("x: ", round(rad_to_deg(global_rotation.x) / 90), ", z: ", round(rad_to_deg(global_rotation.z) / 90))
 			toggle = false
 	if linear_velocity != Vector3.ZERO:
