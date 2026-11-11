@@ -4,10 +4,14 @@
 [ext_resource type="Script" uid="uid://y4h4056xx7xm" path="res://die.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://dqtk8gtr8ad1f" path="res://roll_dice_button.gd" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://qii02x7bx0c" path="res://score_label.gd" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c3k5a1moeumwc" path="res://score_pips.tscn" id="5_lquwl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vf1vs"]
+font_size = 24
 
 [sub_resource type="Environment" id="Environment_vf1vs"]
 background_mode = 1
-background_color = Color(0.76899225, 0.38273674, 0.49740392, 1)
+background_color = Color(0.8733913, 0.27592364, 0.5357687, 1)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7dm0k"]
 data = PackedVector3Array(-0.5, -0.005, 0.5, -0.5, -0.005, -0.5, -0.5, 0.005, -0.5, 0.5, -0.005, -0.5, -0.5, -0.005, -0.5, -0.5, -0.005, 0.5, -0.5, 0.005, -0.5, -0.5, -0.005, -0.5, 0.5, -0.005, -0.5, -0.5, 0.005, -0.5, -0.5, 0.005, 0.5, -0.5, -0.005, 0.5, -0.5, -0.005, 0.5, -0.5, 0.005, 0.5, 0.5, 0.005, 0.5, 0.5, 0.005, 0.5, -0.5, 0.005, 0.5, -0.5, 0.005, -0.5, -0.5, -0.005, 0.5, 0.5, -0.005, 0.5, 0.5, -0.005, -0.5, 0.5, 0.005, 0.5, 0.5, -0.005, 0.5, -0.5, -0.005, 0.5, 0.5, -0.005, -0.5, 0.5, -0.005, 0.5, 0.5, 0.005, 0.5, 0.5, -0.005, -0.5, 0.5, 0.005, -0.5, -0.5, 0.005, -0.5, -0.5, 0.005, -0.5, 0.5, 0.005, -0.5, 0.5, 0.005, 0.5, 0.5, 0.005, 0.5, 0.5, 0.005, -0.5, 0.5, -0.005, -0.5)
@@ -21,10 +25,36 @@ data = PackedVector3Array(-0.5, -0.0005, 0.5, -0.5, -0.0005, -0.5, -0.5, 0.0005,
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h2yge"]
 data = PackedVector3Array(-0.5, -0.0005, 0.5, -0.5, -0.0005, -0.5, -0.5, 0.0005, -0.5, 0.5, -0.0005, -0.5, -0.5, -0.0005, -0.5, -0.5, -0.0005, 0.5, -0.5, 0.0005, -0.5, -0.5, -0.0005, -0.5, 0.5, -0.0005, -0.5, -0.5, 0.0005, -0.5, -0.5, 0.0005, 0.5, -0.5, -0.0005, 0.5, -0.5, -0.0005, 0.5, -0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, -0.5, 0.0005, 0.5, -0.5, 0.0005, -0.5, -0.5, -0.0005, 0.5, 0.5, -0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, 0.0005, 0.5, 0.5, -0.0005, 0.5, -0.5, -0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, -0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, 0.0005, -0.5, -0.5, 0.0005, -0.5, -0.5, 0.0005, -0.5, 0.5, 0.0005, -0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, -0.5, 0.5, -0.0005, -0.5)
 
-[sub_resource type="LabelSettings" id="LabelSettings_vf1vs"]
-font_size = 24
-
 [node name="Main" type="Node3D" unique_id=2044778682]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=8268221]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 32
+
+[node name="Control" parent="MarginContainer" unique_id=1230874567 instance=ExtResource("5_lquwl")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+num_pips = 5
+
+[node name="RollDiceButton" type="Button" parent="." unique_id=1809123297]
+offset_right = 73.0
+offset_bottom = 31.0
+text = "Roll dice"
+script = ExtResource("3_h2yge")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=159895376 node_paths=PackedStringArray("cam")]
+unique_name_in_owner = true
+offset_left = 1112.0
+offset_right = 1152.0
+offset_bottom = 34.0
+label_settings = SubResource("LabelSettings_vf1vs")
+script = ExtResource("4_1bvp3")
+cam = NodePath("../Camera3D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1264556586]
 environment = SubResource("Environment_vf1vs")
@@ -86,21 +116,6 @@ script = ExtResource("2_0xm2m")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2114057175]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.79271245, 0)
-
-[node name="RollDiceButton" type="Button" parent="." unique_id=1809123297]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Roll dice"
-script = ExtResource("3_h2yge")
-
-[node name="ScoreLabel" type="Label" parent="." unique_id=159895376 node_paths=PackedStringArray("cam")]
-unique_name_in_owner = true
-offset_left = 1112.0
-offset_right = 1152.0
-offset_bottom = 23.0
-label_settings = SubResource("LabelSettings_vf1vs")
-script = ExtResource("4_1bvp3")
-cam = NodePath("../Camera3D")
 
 [connection signal="pressed" from="RollDiceButton" to="RollDiceButton" method="_on_pressed"]
 [connection signal="pressed" from="RollDiceButton" to="ScoreLabel" method="_on_roll_dice_button_pressed"]

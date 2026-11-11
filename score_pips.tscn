@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c3k5a1moeumwc"]
+
+[ext_resource type="Script" uid="uid://c4p1ockp8rwrg" path="res://score_pips.gd" id="1_fjjpy"]
+
+[node name="Control" type="Control" unique_id=1230874567]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fjjpy")
