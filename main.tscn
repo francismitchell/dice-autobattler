@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://3fosug4fn0jo" path="res://die.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://y4h4056xx7xm" path="res://die.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://dqtk8gtr8ad1f" path="res://roll_dice_button.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://qii02x7bx0c" path="res://score_label.gd" id="4_1bvp3"]
 
 [sub_resource type="Environment" id="Environment_vf1vs"]
 background_mode = 1
@@ -19,6 +20,9 @@ data = PackedVector3Array(-0.5, -0.0005, 0.5, -0.5, -0.0005, -0.5, -0.5, 0.0005,
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h2yge"]
 data = PackedVector3Array(-0.5, -0.0005, 0.5, -0.5, -0.0005, -0.5, -0.5, 0.0005, -0.5, 0.5, -0.0005, -0.5, -0.5, -0.0005, -0.5, -0.5, -0.0005, 0.5, -0.5, 0.0005, -0.5, -0.5, -0.0005, -0.5, 0.5, -0.0005, -0.5, -0.5, 0.0005, -0.5, -0.5, 0.0005, 0.5, -0.5, -0.0005, 0.5, -0.5, -0.0005, 0.5, -0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, -0.5, 0.0005, 0.5, -0.5, 0.0005, -0.5, -0.5, -0.0005, 0.5, 0.5, -0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, 0.0005, 0.5, 0.5, -0.0005, 0.5, -0.5, -0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, -0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, -0.0005, -0.5, 0.5, 0.0005, -0.5, -0.5, 0.0005, -0.5, -0.5, 0.0005, -0.5, 0.5, 0.0005, -0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, 0.5, 0.5, 0.0005, -0.5, 0.5, -0.0005, -0.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vf1vs"]
+font_size = 24
 
 [node name="Main" type="Node3D" unique_id=2044778682]
 
@@ -89,4 +93,13 @@ offset_bottom = 8.0
 text = "Roll dice"
 script = ExtResource("3_h2yge")
 
+[node name="ScoreLabel" type="Label" parent="." unique_id=159895376]
+unique_name_in_owner = true
+offset_left = 1112.0
+offset_right = 1152.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_vf1vs")
+script = ExtResource("4_1bvp3")
+
 [connection signal="pressed" from="RollDiceButton" to="RollDiceButton" method="_on_pressed"]
+[connection signal="pressed" from="RollDiceButton" to="ScoreLabel" method="_on_roll_dice_button_pressed"]
