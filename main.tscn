@@ -93,13 +93,14 @@ offset_bottom = 8.0
 text = "Roll dice"
 script = ExtResource("3_h2yge")
 
-[node name="ScoreLabel" type="Label" parent="." unique_id=159895376]
+[node name="ScoreLabel" type="Label" parent="." unique_id=159895376 node_paths=PackedStringArray("cam")]
 unique_name_in_owner = true
 offset_left = 1112.0
 offset_right = 1152.0
 offset_bottom = 23.0
 label_settings = SubResource("LabelSettings_vf1vs")
 script = ExtResource("4_1bvp3")
+cam = NodePath("../Camera3D")
 
 [connection signal="pressed" from="RollDiceButton" to="RollDiceButton" method="_on_pressed"]
 [connection signal="pressed" from="RollDiceButton" to="ScoreLabel" method="_on_roll_dice_button_pressed"]

@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 				landed_on_value = 5
 			else:
 				landed_on_value = 6
-			die_landed.emit(landed_on_value)
+			die_landed.emit(global_position, landed_on_value)
 			#print("x: ", round(rad_to_deg(global_rotation.x) / 90), ", z: ", round(rad_to_deg(global_rotation.z) / 90))
 			toggle = false
 	if linear_velocity != Vector3.ZERO:
